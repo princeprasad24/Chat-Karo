@@ -46,14 +46,22 @@
     font-size: 1em;
   }
   
-  li {
+  p {
     background-color: #e1f5fe;
     padding: 10px 15px;
     margin-bottom: 8px;
     border-radius: 5px;
     font-size: 0.95em;
     border-left: 4px solid #039be5;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.321);
+
   }
+
+  input[readonly] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
   
   li strong {
     color: #0277bd;
@@ -61,6 +69,17 @@
 
   li:nth-child(odd) {
     background-color: #b3e0fc; 
+  }
+  
+
+  .username-p {
+    display: block;
+    font-weight: bold;
+    color: #2b7a78;
+  }
+  .join-p {
+    color: rgb(37, 37, 37);
+    font-style: italic;
   }
   
   
@@ -94,6 +113,57 @@
   .oparation button:hover {
     background-color: #01579b;
   }
+
+
+  #instructionBox {
+    display: none;
+    margin: 15px auto;
+    padding: 15px 20px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #2b7a78;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #instructionBox h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  #instructionBox ul {
+    padding-left: 20px;
+  }
+  
+  #instructionBox li {
+    color: black !important;
+    background-color: #039ae539 ;
+    border-radius: 5px;
+    padding-left: 5px;
+    list-style:circle;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  
+  #instructionBtn {
+    margin: 10px 0;
+    padding: 8px 16px;
+    background-color: #2b7a78;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  #instructionBtn:hover {
+    background-color: #205d5a;
+  }
+  
   
   @media screen and (max-width: 768px) {
     .container {

@@ -4,6 +4,7 @@ let currentRoom = "";
 const showMsg = document.getElementById("showMsg");
 const sendBtn = document.getElementById("sendBtn");
 const joinBtn = document.getElementById("joinBtn");
+const userBtn = document.getElementById("userBtn");
 
 sendBtn.addEventListener("click", () => {
   const msgInput = document.getElementById("msg");
@@ -26,6 +27,15 @@ sendBtn.addEventListener("click", () => {
   }
 });
 
+userBtn.addEventListener("click", () => {
+  username.readOnly = true;
+  userBtn.style.display = "none";
+  if (!username) {
+    alert("Please enter a username");
+    return;
+  }
+});
+
 joinBtn.addEventListener("click", () => {
   const room = document.getElementById("room").value.trim();
   if (room) {
@@ -36,15 +46,33 @@ joinBtn.addEventListener("click", () => {
 socket.on("room-joined", (room) => {
   currentRoom = room;
   document.getElementById("roomInfo").textContent = `Current Room: ${room}`;
-  const li = document.createElement("p");
-  li.innerHTML = `<strong>Joined room:</strong>  ${room}`;
-  li.classList.add("join-p");
-  showMsg.appendChild(li);
+
+  const p = document.createElement("p");
+  p.innerHTML = `<strong>Joined room:</strong> ${room}`;
+  p.classList.add("join-p");
+  showMsg.appendChild(p);
+  showMsg.scrollTop = showMsg.scrollHeight;
 });
 
+
+
+
 socket.on("receive-msg", ({ username, msg }) => {
-  const li = document.createElement("li");
-  li.textContent = `${username}: ${msg}`;
-  showMsg.appendChild(li);
+  const p = document.createElement("p");
+  p.innerHTML = `<span class="username-p">${username}:</span> ${msg}`;
+  showMsg.appendChild(p);
   showMsg.scrollTop = showMsg.scrollHeight;
+});
+
+
+const instructionBtn = document.getElementById("instructionBtn");
+const instructionBox = document.getElementById("instructionBox");
+
+instructionBtn.addEventListener("click", () => {
+  if (instructionBox.style.display === "none") {
+    instructionBox.style.display = "block";
+    instructionBtn.innerHTML = "Hide Instructions";
+  } else {
+    instructionBox.style.display = "none";
+  }
 });

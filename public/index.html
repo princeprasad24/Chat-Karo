@@ -9,11 +9,22 @@
   <body>
     <h1>Chat Karo</h1>
     <div id="roomInfo"></div>
+    <button id="instructionBtn">show Instructions</button>
+    <div id="instructionBox">
+      <h3>How to Use Chat Karo</h3>
+      <ul>
+        <li>Enter your <strong>username</strong> and click Submit  .</li>
+        <li>Type the <strong>room name</strong> and click Join   to join a room.</li>
+        <li>Enter a message in the <strong>message</strong> box and click Send   to chat.</li>
+        <li>Each room is private — only users in the same room can chat together.</li>
+      </ul>
+    </div>
     <div class="container">
       <ul id="showMsg"></ul>
     </div>
     <div class="oparation">
       <input type="text" id="username" placeholder="Username" />
+      <button id="userBtn">Submit</button>
       <input type="text" id="msg" placeholder="Type message" />
       <button id="sendBtn">Send</button>
       <input type="text" id="room" placeholder="Room name" />
