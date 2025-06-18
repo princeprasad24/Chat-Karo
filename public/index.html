@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chat Karo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Chat Karo</h1>
+    <div id="roomInfo"></div>
+    <div class="container">
+      <ul id="showMsg"></ul>
+    </div>
+    <div class="oparation">
+      <input type="text" id="username" placeholder="Username" />
+      <input type="text" id="msg" placeholder="Type message" />
+      <button id="sendBtn">Send</button>
+      <input type="text" id="room" placeholder="Room name" />
+      <button id="joinBtn">Join</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
