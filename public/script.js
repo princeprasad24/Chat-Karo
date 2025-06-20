@@ -54,9 +54,6 @@ socket.on("room-joined", (room) => {
   showMsg.scrollTop = showMsg.scrollHeight;
 });
 
-
-
-
 socket.on("receive-msg", ({ username, msg }) => {
   const p = document.createElement("p");
   p.innerHTML = `<span class="username-p">${username}:</span> ${msg}`;
